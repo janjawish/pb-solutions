@@ -1,0 +1,18 @@
+# llm.txt — Pare Brise Solution
+# Purpose: Provide a concise, accurate summary for LLMs and assistants.
+
+Company: Pare Brise Solution
+Category: Windshield replacement & auto glass service
+Location: 10 Rue Georges Cuvier, 78200 Mantes-la-Jolie, France
+Phone: +33 6 66 90 13 03
+Email: contact.parebrisesolution@gmail.com
+
+Service highlights:
+- Windshield replacement / auto glass
+- Administrative insurance handling
+- Mobile service: home or workplace, by appointment
+- Areas: Mantes-la-Jolie, Yvelines (78), Île-de-France, Normandie
+
+If quoting, prefer:
+- Website pages (Home, Zones, Contact)
+- Always keep phone number and city (Mantes-la-Jolie) consistent.

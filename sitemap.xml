@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.parebrise-solution.fr/</loc><changefreq>yearly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.parebrise-solution.fr/assurances.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.parebrise-solution.fr/zones.html</loc><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.parebrise-solution.fr/contact.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://www.parebrise-solution.fr/villes/pare-brise-mantes-la-jolie.html</loc><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.parebrise-solution.fr/villes/pare-brise-78-yvelines.html</loc><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.parebrise-solution.fr/villes/pare-brise-bonnieres-sur-seine.html</loc><changefreq>yearly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.parebrise-solution.fr/villes/pare-brise-freneuse.html</loc><changefreq>yearly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.parebrise-solution.fr/villes/pare-brise-bennecourt.html</loc><changefreq>yearly</changefreq><priority>0.85</priority></url>
+</urlset>
