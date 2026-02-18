@@ -115,3 +115,70 @@ if (typeof window.gsap === "undefined") {
     );
   });
 })();
+(function () {
+  const initCarousel = (root) => {
+    const track = root.querySelector(".carousel__track");
+    const slides = Array.from(root.querySelectorAll(".carousel__slide"));
+    const prevBtn = root.querySelector(".carousel__btn--prev");
+    const nextBtn = root.querySelector(".carousel__btn--next");
+    const dotsWrap = root.querySelector(".carousel__dots");
+
+    if (!track || slides.length <= 1) return;
+
+    let index = 0;
+    let timer = null;
+    const interval = Math.max(1500, Number(root.dataset.interval || 3000));
+
+    // Dots
+    const dots = slides.map((_, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "carousel__dot";
+      b.setAttribute("aria-label", `Aller à l'image ${i + 1}`);
+      b.addEventListener("click", () => go(i, true));
+      dotsWrap && dotsWrap.appendChild(b);
+      return b;
+    });
+
+    const paint = () => {
+      track.style.transform = `translateX(${-index * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+    };
+
+    const go = (i, user = false) => {
+      index = (i + slides.length) % slides.length;
+      paint();
+      if (user) restart();
+    };
+
+    const next = (user = false) => go(index + 1, user);
+    const prev = (user = false) => go(index - 1, user);
+
+    const stop = () => {
+      if (timer) clearInterval(timer);
+      timer = null;
+    };
+
+    const start = () => {
+      stop();
+      timer = setInterval(() => next(false), interval);
+    };
+
+    const restart = () => start();
+
+    nextBtn && nextBtn.addEventListener("click", () => next(true));
+    prevBtn && prevBtn.addEventListener("click", () => prev(true));
+
+    // Pause au survol / focus
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+    root.addEventListener("focusin", stop);
+    root.addEventListener("focusout", start);
+
+    paint();
+    start();
+  };
+
+  const carousels = document.querySelectorAll(".carousel");
+  carousels.forEach(initCarousel);
+})();

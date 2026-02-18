@@ -61,10 +61,10 @@
   <header class="topbar">
     <div class="container topbar__inner">
       <a class="brand" href="/">
-        <span class="brand__logo">PB</span>
-        <span class="brand__text">
-          <strong>Pare Brise Solution</strong>
-          <small>Pare-brise à Mantes-la-Jolie • 78 • Île-de-France & Normandie</small>
+<a href="index.html" class="site-logo" aria-label="Accueil">
+  <img src="assets/img/logo.png" alt="Pare Brise Solution">
+</a>
+
         </span>
       </a>
 
@@ -145,7 +145,7 @@
 
         <div class="hero__visual reveal">
           <div class="glasscard">
-            <img src="assets/img/comment-reparer-son-pare-brise.webp" alt="Technicien remplaçant un pare-brise" width="1200" height="800" loading="eager" decoding="async" />
+            <img src="assets/img/comment-reparer-son-pare-brise.png" alt="Technicien remplaçant un pare-brise" width="1200" height="800" loading="eager" decoding="async" />
             <div class="glasscard__overlay">
               <div class="kpi">
                 <strong>Cadeau au choix</strong>
@@ -292,25 +292,51 @@
       </div>
     </section>
 
-    <!-- MAP -->
-    <section class="section">
-      <div class="container">
-        <header class="section__head reveal">
-          <h2>Localisation (Mantes-la-Jolie)</h2>
-          <p>10 Rue Georges Cuvier, 78200 Mantes-la-Jolie</p>
-        </header>
+<section id="interventions" class="section">
+  <div class="container">
+    <h2>Interventions en images</h2>
 
-        <div class="mapwrap reveal">
-          <!-- embed fiable sans pb code -->
-          <iframe
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=10%20Rue%20Georges%20Cuvier%2C%2078200%20Mantes-la-Jolie&output=embed"
-            title="Carte - Pare Brise Solution">
-          </iframe>
+    <div class="carousel" data-interval="3200">
+      <div class="carousel__viewport">
+        <div class="carousel__track">
+          <figure class="carousel__slide">
+            <img src="assets/img/i/i1.jpg" alt="Intervention 1" loading="lazy" decoding="async">
+          </figure>
+          <figure class="carousel__slide">
+            <img src="assets/img/i/i2.jpg" alt="Intervention 2" loading="lazy" decoding="async">
+          </figure>
+          <figure class="carousel__slide">
+            <img src="assets/img/i/i3.jpg" alt="Intervention 3" loading="lazy" decoding="async">
+          </figure>
+          <figure class="carousel__slide">
+            <img src="assets/img/i/i4.jpg" alt="Intervention 4" loading="lazy" decoding="async">
+          </figure>
+          <figure class="carousel__slide">
+            <img src="assets/img/i/i5.jpg" alt="Intervention 5" loading="lazy" decoding="async">
+          </figure>
+          <figure class="carousel__slide">
+            <img src="assets/img/i/i5.webp" alt="Intervention 6" loading="lazy" decoding="async">
+          </figure>
+          <figure class="carousel__slide">
+            <img src="assets/img/i/i6.jpg" alt="Intervention 7" loading="lazy" decoding="async">
+          </figure>
+          <figure class="carousel__slide">
+            <img src="assets/img/i/i7.jpg" alt="Intervention 8" loading="lazy" decoding="async">
+          </figure>
+          <figure class="carousel__slide">
+            <img src="assets/img/i/i8.jpg" alt="Intervention 9" loading="lazy" decoding="async">
+          </figure>
         </div>
       </div>
-    </section>
+
+      <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Précédent">‹</button>
+      <button class="carousel__btn carousel__btn--next" type="button" aria-label="Suivant">›</button>
+
+      <div class="carousel__dots" aria-label="Navigation galerie"></div>
+    </div>
+  </div>
+</section>
+
 
     <!-- CTA -->
     <section class="section section--alt">
@@ -375,4 +401,3 @@
 
 </body>
 </html>
-
