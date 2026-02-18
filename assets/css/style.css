@@ -855,3 +855,123 @@ html, body{
     max-width: 100%;
   }
 }
+/* ===========================
+   OFFRES : image de fond propre + overlay lisible
+   =========================== */
+
+#offres{
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image de fond (tu peux changer l'image ici) */
+#offres::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: url("assets/img/interventions/i2.jpg"); /* ✅ change si tu veux */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(1.05) contrast(1.05);
+  transform: scale(1.03);
+  z-index:0;
+}
+
+/* Overlay sombre + léger dégradé pour lisibilité */
+
+
+
+/* Le contenu passe au-dessus */
+#offres .container{
+  position: relative;
+  z-index: 2;
+}
+
+/* Cartes légèrement plus lisibles sur image */
+#offres .card{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+/* ===========================
+   Cartes avec icône
+   =========================== */
+.card--icon{
+  position: relative;
+  padding-top: 18px;
+}
+
+.card__icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 10px;
+  color: rgba(255,255,255,.92);
+  background: linear-gradient(180deg, rgba(0,160,255,.18), rgba(255,255,255,.06));
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 12px 30px rgba(0,0,0,.22);
+}
+
+.card__icon svg{
+  display:block;
+}
+/* ===========================
+   HERO : image de fond propre (WEBP) + overlay lisible
+   =========================== */
+.hero{
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image de fond */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: url("../img/bg/hero.webp"); /* ✅ ton fond webp ici */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.03);
+  filter: saturate(1.05) contrast(1.05);
+  z-index: 0;
+}
+
+/* Overlay (évite que ça fasse moche + garde la lisibilité du texte) */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(900px 520px at 20% 10%, rgba(0,160,255,.14), transparent 60%),
+    linear-gradient(180deg, rgba(3,12,28,.78), rgba(3,12,28,.62));
+  z-index: 1;
+}
+
+/* Le contenu au-dessus du fond */
+.hero .container{
+  position: relative;
+  z-index: 2;
+}
+/* Icônes en image dans les cartes */
+.card__icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 10px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.card__icon img{
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+}
