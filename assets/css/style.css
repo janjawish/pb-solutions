@@ -70,6 +70,14 @@ img{max-width:100%; display:block}
 .nav{display:flex; align-items:center; gap:14px}
 .nav a{font-weight:750; font-size:14px; color:var(--muted)}
 .nav a:hover{color:var(--text)}
+/* Bande du haut plus large (plus haute) */
+header,
+.site-header,
+.navbar{
+  min-height: 92px;        /* augmente la hauteur */
+  padding-top: 16px;       /* plus d’air */
+  padding-bottom: 16px;
+}
 
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
@@ -633,4 +641,217 @@ img{max-width:100%; display:block}
 }
 .footer__bottomlinks .sep{
   opacity:.6;
+}
+/* ===== Carousel interventions ===== */
+.carousel{
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+  border:1px solid rgba(0,0,0,.12);
+  background:#0b0b0b;
+}
+
+.carousel__viewport{overflow:hidden}
+
+.carousel__track{
+  display:flex;
+  transition: transform .55s ease;
+  will-change: transform;
+}
+
+.carousel__slide{
+  min-width:100%;
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Zone image : on garde un format propre (responsive) */
+.carousel__slide img{
+  width:100%;
+  height:auto;
+  aspect-ratio: 16 / 9;     /* ✅ rendu propre sur desktop */
+  object-fit: cover;        /* ✅ rempli sans déformation */
+  object-position: center;  /* ✅ centre l’image */
+  display:block;
+}
+
+/* Mobile : un peu plus “haut” (tes photos sont souvent verticales) */
+@media (max-width: 720px){
+  .carousel__slide img{
+    aspect-ratio: 4 / 5;   /* ✅ meilleur pour vertical */
+  }
+}
+
+/* Boutons */
+.carousel__btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px; height:44px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(0,0,0,.35);
+  color:#fff;
+  font-size:26px;
+  cursor:pointer;
+}
+.carousel__btn--prev{left:12px}
+.carousel__btn--next{right:12px}
+
+/* Points */
+.carousel__dots{
+  position:absolute;
+  left:0; right:0; bottom:12px;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+}
+.carousel__dot{
+  width:10px; height:10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.2);
+  cursor:pointer;
+}
+.carousel__dot.is-active{background:rgba(255,255,255,.85)}
+/* ===== Logo en haut à gauche ===== */
+.site-logo{
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  text-decoration: none;
+}
+
+.site-logo img{
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Mobile : un peu plus petit */
+@media (max-width: 720px){
+  .site-logo{
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+  }
+  .site-logo img{
+    width: 46px;
+    height: 46px;
+  }
+}
+/* ===========================
+   HERO MOBILE : pas de dépassement + tout bien affiché
+   Colle ce bloc EN BAS de style.css
+   =========================== */
+
+/* Stop scroll horizontal (le plus important) */
+html, body{
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Mots longs / titres : jamais de débordement */
+.hero h1, .hero p, .badge{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Image responsive par défaut */
+.hero img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px){
+
+  /* Container : marges mobile propres */
+  .container{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* HERO en 1 colonne (texte puis photo) */
+  .hero__grid{
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  /* Badge (Aucune avance de frais...) : doit se couper sur 2 lignes si besoin */
+  .badge{
+    max-width: 100%;
+    white-space: normal !important;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.25;
+    padding: 10px 12px;
+  }
+
+  /* TITRES : tailles “mobile” (plus petit, propre) */
+  .hero h1{
+    margin: 10px 0 10px;
+    font-size: clamp(24px, 6.4vw, 34px);
+    line-height: 1.12;
+  }
+  .hero .lead{
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  /* Boutons : pas de débordement + ils passent à la ligne */
+  .hero__cta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .hero__cta .btn{
+    flex: 1 1 170px;     /* 2 boutons côte à côte si place, sinon empile */
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* Les 3 cartes (Tout véhicule / Toute assurance / Intervention rapide) */
+  .hero__trust{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .trustcard{
+    max-width: 100%;
+  }
+
+  /* PHOTO DU DEBUT (glasscard) : responsive + belle hauteur mobile */
+  .hero__visual{
+    width: 100%;
+  }
+  .glasscard{
+    width: 100%;
+    max-width: 520px;   /* évite qu’elle devienne énorme */
+    margin: 0 auto;     /* centrée */
+  }
+  .glasscard img{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;     /* top pour mobile (photos souvent verticales) */
+    object-fit: cover;        /* rempli sans déformer */
+    object-position: center;
+  }
+
+  /* Overlay KPI : éviter que ça dépasse */
+  .glasscard__overlay{
+    max-width: 100%;
+  }
 }
