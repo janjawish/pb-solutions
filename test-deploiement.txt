@@ -1,1 +1,1 @@
-
+Test du deploiement automatique MSI
